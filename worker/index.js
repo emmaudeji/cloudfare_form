@@ -2,6 +2,8 @@ addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request))
 })
 
+const FORM_URL = "https://airtable-form-example.pages.dev"
+
 const createAirtableRecord = body => {
   return fetch(`https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(AIRTABLE_TABLE_NAME)}`, {
     method: 'POST',
